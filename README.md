@@ -10,22 +10,13 @@ This project started as 'we need to generate our 3 VM images we use in our DevOp
 1. Download and install Git from https://git-scm.com/downloads I used v2.6.4
 1. Ensure `ssh.exe` is in your path by adding `C:\Program Files\Git\usr\bin;` to the `PATH` environment variable.
 1. Run ChefDK as administrator - 'Windows key' then 'chef' then right click 'Chef Development Kit' and click 'Run as administrator'. That will start a PowerShell.
-
-The following will be different when this code eventually gets pushed to GitHub
-
-1. `cd` to somewhere you want to clone this git repo to. I chose c:\Users\<my id>\git-rtp i.e. specific to this GitLab install
-1. `git config user.name <your GitLab id>`
-1. `git config http.sslVerify false`
-1. `git clone <url for this repo>`
-
-Once you have the repo cloned, in PowerShell:
-
+1. Clone this repo. 
 1. `vagrant plugin install vagrant-berkshelf` For more on Berkshelf see: [berkshelf.com](http://berkshelf.com/)
 1. `vagrant up`
 
 If you need to debug you'll want to run `vagrant ssh` to get into the VM and retrieve Chef logs or other logs.
 
-There's a strange glitch when workstation is created. The `dpkg` command has some issues updating some packages and we get this message:
+There's a strange glitch when the `workstation` VM is created. The `dpkg` command has some issues updating some packages and we get this message:
 
 `==> workstation: Sub-process /usr/bin/dpkg returned an error code (1)`
 
