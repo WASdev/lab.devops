@@ -1,5 +1,8 @@
-This project started as 'we need to generate our 3 VM images we use in our DevOps lab so we can update the s/w inside the images really easily'.
-We knew Vagrant does that so that's what we have here.
+#lab.devops
+
+This sample provides the means to create the VM images for an open source DevOps tool chain using WebSphere Liberty. As well as WebSphere Liberty the tutorial makes use of Eclipse, [WebSphere Developer Tools](http://marketplace.eclipse.org/search/site/%2522wdt%2522), [LARS](http://github.com/wasdev/tool.lars) with Apache Maven, Git, Jenkins, Docker|Chef.
+
+This project started as 'we need to generate our 3 VM images we use in our DevOps lab so we can update the s/w inside the images really easily'. We knew Vagrant does that so that's what we have here.
 
 1. Download and install Vagrant from https://www.vagrantup.com/downloads.html I put mine in C:\HashiCorp\Vagrant I used v1.7.4
 1. Download and install ChefDK from https://downloads.chef.io/chef-dk/ I used v0.10.0
@@ -17,7 +20,7 @@ The following will be different when this code eventually gets pushed to GitHub
 
 Once you have the repo cloned, in PowerShell:
 
-1. `vagrant plugin install vagrant-berkshelf` [berkshelf.com](http://berkshelf.com/)
+1. `vagrant plugin install vagrant-berkshelf` For more on Berkshelf see: [berkshelf.com](http://berkshelf.com/)
 1. `vagrant up`
 
 If you need to debug you'll want to run `vagrant ssh` to get into the VM and retrieve Chef logs or other logs.
@@ -32,19 +35,15 @@ After which just run this to get things going again:
 
 # License
 
-```text
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+We use the [Apache 2.0 License](https://github.com/WASdev/lab.devops/blob/master/LICENSE)
 
-    http://www.apache.org/licenses/LICENSE-2.0
+# Contributing
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-```
+We accept contributions. Please see our [How to contribute page](https://github.com/WASdev/wasdev.github.io/blob/master/CONTRIBUTING.md)
+
+# Dependencies
+
+This is really important. When you run Vagrant, all sorts of software will be downloaded. You'll get Ubuntu and all that comes with that. Then you'll get the following in one or more of the 3 VMs that are created:
 
 | **Dependency**   | **Version** | **License**                                                    | **Source**                                        | **license page**                                                                                   |
 |------------------|-------------|----------------------------------------------------------------|---------------------------------------------------|----------------------------------------------------------------------------------------------------|
