@@ -1,0 +1,23 @@
+{
+  "name": "prod", 
+  "chef_environment": "_default",
+  "normal": {
+    "wlp": {
+      "archive": {
+        "accept_license": "true",
+        "version_yaml": "http://server:9111/files/index.yml"
+      }
+    },
+    "java": {
+      "install_flavor": "ibm",
+      "ibm": {
+        "url": "http://server:9111/files/ibm-java-x86_64-sdk-7.1-0.0.bin",
+        "accept_ibm_download_terms": "true"
+      }
+    }
+  },
+  "run_list": [
+    "recipe[apt]",
+    "recipe[acmeair]"
+  ]
+}

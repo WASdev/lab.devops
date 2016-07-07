@@ -1,0 +1,6 @@
+source 'https://supermarket.chef.io'
+
+cookbook "application"
+cookbook "application_wlp"
+cookbook "apt"
+cookbook "java"

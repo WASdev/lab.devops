@@ -1,0 +1,23 @@
+    <httpEndpoint id="defaultHttpEndpoint"
+                  host="*"
+                  httpPort="9080" >
+      <tcpOptions soReuseAddr="true"/>
+    </httpEndpoint>
+    
+    <jdbcDriver id="DerbyEmbedded" libraryRef="DerbyLib"/>
+    <library filesetRef="DerbyFileset" id="DerbyLib"/>
+    <fileset id="DerbyFileset" 
+             dir="/home/liberty/.m2/repository/org/apache/derby/derby/10.10.1.1"  
+             includes="derby*.jar"/>
+
+    <dataSource id="jdbc/acmeairdatasource" 
+                jdbcDriverRef="DerbyEmbedded" 
+                jndiName="jdbc/acmeairdatasource">
+        <properties.derby.embedded createDatabase="create" databaseName="acmeairdatabase"/>
+    </dataSource>
+
+    <dataSource id="jdbc/acmeairdatasourcenonjta" 
+                jdbcDriverRef="DerbyEmbedded" 
+                jndiName="jdbc/acmeairdatasourcenonjta" transactional="false">
+        <properties.derby.embedded createDatabase="create" databaseName="acmeairdatabase"/>
+    </dataSource> 

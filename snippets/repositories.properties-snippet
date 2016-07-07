@@ -1,0 +1,51 @@
+----------------------------------------------------------------------
+######################################################################
+## ## Using the online IBM WebSphere Liberty Repository ##
+## Set the useDefaultRepository property to false to prevent
+## installUtility from accessing the internet to connect to the
+## IBM WebSphere Liberty Repository repository. By default, access
+## is enabled.
+## -------------------------------------------------------------------
+useDefaultRepository=false
+
+######################################################################
+## ## Using custom repositories ##
+## installUtility can install assets from directory-based repositories
+## and hosted instances of the Liberty Asset Repository Service.
+## Provide a repository name and either the directory path or URL to
+## each custom repository containing Liberty assets.
+## The repositories are accessed in the order that they are specified.
+
+## Specify the name and file path or URL
+## to directory-based repositories.
+## -------------------------------------------------------------------
+#localRepositoryName1.url=/usr/LibertyRepository1
+#localRepositoryName2.url=file:/usr/LibertyRepository2
+
+## Specify the name and URL to hosted repositories.
+## -------------------------------------------------------------------
+hostedRepositoryName1.url=http://192.168.168.14:9080/ma/v1
+#hostedRepositoryName2.url=https://w3.mycompany.com/secure/repository
+
+## Specify the credentials of each repository, if required.
+## For enhanced security, encode the value of the .password
+## property by using the securityUtility encode action.
+## If you do not set the user and password, you receive a prompt
+## to provide them.
+## -------------------------------------------------------------------
+#hostedRepositoryName2.user=username
+#hostedRepositoryName2.password=myPassword
+
+######################################################################
+## ## Using a proxy server (optional) ##
+## If you use a proxy server to access the internet,
+## specify values for the proxy settings properties.
+## For enhanced security, encode the value of the proxyPassword
+## property by using the securityUtility encode action.
+## If you do not set the proxyUser and proxyPassword, you receive
+## a prompt to provide them.
+## -------------------------------------------------------------------
+#proxyHost=hostName
+#proxyPort=3128
+#proxyUser=proxyUsername
+#proxyPassword=myProxyPassword

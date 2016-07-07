@@ -1,0 +1,3 @@
+acmeair-webapp/target/*war, acmeair-itests/src/main/resources/servers/acmeair/*, acmeair-itests/target/usr/shared/**
+
+acmeair-itests/target/failsafe-reports/*.xml

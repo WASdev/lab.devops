@@ -1,0 +1,19 @@
+diff -ru acmeair_single-server/acmeair/recipes/default.rb acmeair_multiple-servers/acmeair/recipes/default.rb
+--- acmeair_single-server/acmeair/recipes/default.rb	2015-01-14 04:55:25.026048248 -0800
++++ acmeair_multiple-servers/acmeair/recipes/default.rb	2015-01-14 04:58:16.126049778 -0800
+@@ -1,6 +1,12 @@
+ include_recipe "wlp::default"
+ 
+-acmeair_server "create server acmeair1" do
+-  server_name "acmeair1"
+-  action :install
++servers = node[:acmeair][:servers][:application]
++
++for server_num in 1..servers
++  acmeair_server "create server acmeair#{server_num}" do
++    server_name "acmeair#{server_num}"
++    http_port_num 9080+server_num
++    https_port_num 9443+server_num
++    action :install
++  end
+ end

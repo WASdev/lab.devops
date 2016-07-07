@@ -1,0 +1,13 @@
+FROM server:5000/websphere-liberty:kernel
+
+
+
+COPY derby.jar /opt/ibm/wlp/usr/shared/resources/derby/derby.jar
+COPY server.xml /opt/ibm/wlp/usr/servers/defaultServer/server.xml
+COPY bootstrap.properties /opt/ibm/wlp/usr/servers/defaultServer/bootstrap.properties
+COPY acmeair-webapp-1.0-SNAPSHOT.war /opt/ibm/wlp/usr/servers/defaultServer/apps/acmeair.war
+COPY acmeair-docker/src/main/resources/repositories.properties /opt/ibm/wlp/etc/repositories.properties
+
+
+RUN installUtility install --acceptLicense defaultServer
+ENV LICENSE accept
