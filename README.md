@@ -9,12 +9,14 @@ We knew Vagrant does that so that's what we have here.
 1. Run ChefDK as administrator - 'Windows key' then 'chef' then right click 'Chef Development Kit' and click 'Run as administrator'. That will start a PowerShell.
 
 The following will be different when this code eventually gets pushed to GitHub
+
 1. `cd` to somewhere you want to clone this git repo to. I chose c:\Users\<my id>\git-rtp i.e. specific to this GitLab install
 1. `git config user.name <your GitLab id>`
 1. `git config http.sslVerify false`
 1. `git clone <url for this repo>`
 
 Once you have the repo cloned, in PowerShell:
+
 1. `vagrant plugin install vagrant-berkshelf` [berkshelf.com](http://berkshelf.com/)
 1. `vagrant up`
 
