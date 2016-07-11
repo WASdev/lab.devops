@@ -31,7 +31,7 @@ action :install do
       source url
       user node[:wlp][:user]
       group node[:wlp][:group]
-      action :create_if_missing
+      action :create
     end
   end
 
